@@ -22,3 +22,12 @@ Infinite-ISP Image Signal Processing Pipeline FPGA binaries for XCK26 Zynq® Ult
 6. Reset the Kria KV260 board and visualize the Infinite-ISP output on your monitor screen.
 7. Connect the USB cable with the JTAG/USB port on Kria to read the messages over UART.
 8. You can remove the SD card from the Kria board, extract the dumped single RGB-RAW pair and 300 RGB frames (if applicable) and visualize them using the provided scripts.
+
+## Contact
+For any inquiries or feedback feel free to reach out.
+
+Email: isp@10xengineers.ai
+
+Website: http://www.10xEngineers.ai
+
+LinkedIn: https://www.linkedin.com/company/10x-engineers/
