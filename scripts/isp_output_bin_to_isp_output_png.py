@@ -1,3 +1,13 @@
+"""
+File: isp_output_bin_to_isp_output_png.py
+Description: converts the ISP output memory dump (.bin) data
+             from the FPGA Platform to output image frame (.png) 
+             as well as output pixel data frame (.bin) for
+             verification
+Author: 10xEngineers
+------------------------------------------------------------
+"""
+
 import numpy as np
 import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
