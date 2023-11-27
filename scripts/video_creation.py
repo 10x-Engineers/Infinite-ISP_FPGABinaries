@@ -1,3 +1,13 @@
+"""
+File: video_creation.py
+Description: converts multiple ISP output memory dumps (.bin)
+             from the FPGA Platform to corresponding output 
+             image frames (.png) and stitches them together 
+             into a .mp4 video
+Author: 10xEngineers
+------------------------------------------------------------
+"""
+
 import numpy as np
 import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
