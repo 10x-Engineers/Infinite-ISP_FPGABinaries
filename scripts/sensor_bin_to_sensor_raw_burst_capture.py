@@ -1,9 +1,11 @@
 """
 File: sensor_bin_to_sensor_raw_burst_capture.py
-Description: converts the image sensor memory dump (.bin) data
-             from the FPGA Platform to Bayer RAW frame (.raw) 
-             containing valid pixel data and to .png of its grayscale
-             into separate directories
+Description: converts the image sensor memory dumps (.bin) of
+             RAW Burst Capture from the FPGA Platform to 
+             Bayer RAW frames (.raw) containing valid pixel
+             data.
+             It also converts the Bayer RAW frames to
+             equivalent grayscale .png for visualization.
 Author: 10xEngineers
 ------------------------------------------------------------
 """
