@@ -1,3 +1,13 @@
+"""
+File: isp_output_bin_to_isp_output_png.py
+Description: converts the ISP output memory dump (.bin) data
+             from the FPGA Platform to output image frame (.png) 
+             as well as output pixel data frame (.bin) for
+             verification
+Author: 10xEngineers
+------------------------------------------------------------
+"""
+
 import numpy as np
 import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
@@ -5,12 +15,12 @@ from datetime import datetime
 
 
 filepath = "./"
-filename = 'RTL_ImageTest_2048x1536_10bit_GRBG_1920x1080.bin'
+filename = 'ISPOut_TestImage_2592x1944_10bits_BGGR.bin'
 with open(filepath + filename, 'rb') as f:
     arr = np.fromfile(f, dtype=np.uint8)
 f.close()
 
-h, w, Format, CONV_STD = 1080, 1920, "BGR", 2
+h, w, Format, CONV_STD = 1080, 1920, "YUV444", 2   #copy string from support output formats here
 
 SupportedFormats = {
     "BGR"   : 1,
