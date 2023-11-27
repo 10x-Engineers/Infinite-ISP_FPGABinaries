@@ -2,16 +2,15 @@
 """
 Created on Tue Feb 21 16:07:11 2023
 
-@author: user3
+@author: 10xe
 """
 import numpy as np
-import cv2
 import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
 
 # Supported Sensors
 
-SENSOR = "AR1335"
+SENSOR = "OV5647"   #copy string from supported sensor type here
 
 SupportedSensors = {
     "AR1335": 1,
@@ -19,7 +18,7 @@ SupportedSensors = {
 }
 
 # reading the dumped binary file
-filename = 'ImageTest_2048x1536_10bit_GRBG_1920x1080.bin'
+filename = 'RAW_TestImage_2592x1944_10bits_BGGR.bin'
 with open(filename, 'rb') as f:
     # read the contents of the file into a new array
     arr = np.fromfile(f, dtype=np.uint8)
