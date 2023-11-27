@@ -1,17 +1,20 @@
-# -*- coding: utf-8 -*-
 """
-Created on Tue Feb 21 16:07:11 2023
+File: sensor_bin_to_sensor_raw.py
+Description: converts the image sensor memory dump (.bin) data
+             from the FPGA Platform to Bayer RAW frame (.raw) 
+             containing valid pixel data
+Author: 10xEngineers
+------------------------------------------------------------
+"""
 
-@author: 10xe
-"""
 import numpy as np
 import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
 
-# Supported Sensors
-
+# Sensor selection for conversion to .raw
 SENSOR = "OV5647"   #copy string from supported sensor type here
 
+# Supported Sensors
 SupportedSensors = {
     "AR1335": 1,
     "OV5647": 2 
