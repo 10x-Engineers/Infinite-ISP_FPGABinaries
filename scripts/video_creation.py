@@ -15,6 +15,7 @@ from datetime import datetime
 from pathlib import Path
 import cv2
 import os
+import shutil
 
 # Path of the directory containing "OV5467" and "AR1335" directories
 path =  "./ISP_Output"
@@ -48,8 +49,11 @@ parent_dir = p.resolve().joinpath(SENSOR)
 # Making directory for saving .png files
 bin_dir = "Burst_Capture"       # Created by firmware, DO NOT MODIFY
 bin_path = parent_dir / bin_dir
+frame_dir = Selected_Format + '_Frames'
+frame_path = parent_dir / frame_dir
 video_dir = "Video_Frames"
-video_path = parent_dir/ video_dir
+video_path = parent_dir / video_dir
+Path.mkdir(frame_path,exist_ok=True)
 Path.mkdir(video_path,exist_ok=True) 
 
 # Images are stored in the form of rows where the size of each row in bytes
@@ -81,12 +85,15 @@ for m in range(start_index,end_index+1):
     G = G_flat.reshape(h,w)
     B = B_flat.reshape(h,w)
 
-    if(Supported_Formats[Selected_Format] == Supported_Formats["RGB"]):
-        # In case of RGB, switch the 1st and the 3rd channels
-        img[:,:,0] = B
-        img[:,:,1] = G
-        img[:,:,2] = R
-    else:
+    # In case of RGB, switch the 1st and the 3rd channels
+    img[:,:,0] = B
+    img[:,:,1] = G
+    img[:,:,2] = R
+
+    # Creating RGB/YUV frames in RGB_Frames or YUV_Frames directory
+    plt.imsave(str(frame_path) + '/' + str(m) +'.png', img[:,:,:])
+
+    if(Supported_Formats[Selected_Format] == Supported_Formats["YUV"]):
         # In case of YUV, don't switch the 1st and the 3rd channels
         img[:,:,0] = R
         img[:,:,1] = G
@@ -94,13 +101,16 @@ for m in range(start_index,end_index+1):
 
         # Converting YUV frame to RGB frame
         img = cv2.cvtColor(img, cv2.COLOR_YUV2BGR)
+        plt.imsave(str(video_path) + '/' + str(m) +'.png', img[:,:,:])
 
-    plt.imsave(str(video_path) + '/' + str(m) +'.png', img[:,:,:])
     print(str(m)+'/'+str(end_index))
 
 
 # Path to the folder containing the PNG images
-image_folder = str(video_path)
+if(Supported_Formats[Selected_Format] == Supported_Formats['YUV']):
+    image_folder = str(video_path)
+else:
+    image_folder = str(frame_path)
 
 # Output video file name
 video_name = 'Video.mp4'
@@ -126,7 +136,7 @@ height, width, layers = frame.shape
 
 # Create a VideoWriter object to save the video
 fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-video = cv2.VideoWriter(image_folder + '/' + video_name, fourcc, fps, (width, height))
+video = cv2.VideoWriter(str(frame_path) + '/' + video_name, fourcc, fps, (width, height))
 
 # Iterate over the images and write each frame to the video
 for image in images:
@@ -137,3 +147,7 @@ for image in images:
 # Release the video writer and close any open windows
 video.release()
 cv2.destroyAllWindows()
+
+# Remove directory after creating RGB video for YUV
+if(Supported_Formats[Selected_Format] == Supported_Formats['YUV']):
+    shutil.rmtree(image_folder)
