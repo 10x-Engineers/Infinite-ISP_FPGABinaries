@@ -18,7 +18,7 @@ import os
 import shutil
 
 # Path of the directory containing "OV5467" and "AR1335" directories
-path =  "./ISP_Output"
+path =  "./"
 
 # Supported Sensors and selected sensor (SENSOR)
 SupportedSensors = {
