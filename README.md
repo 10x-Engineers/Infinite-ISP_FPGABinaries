@@ -24,8 +24,14 @@ Infinite-ISP Image Signal Processing Pipeline FPGA binaries for XCK26 Zynq® Ult
 5. Upload the desired binary file (e.g. Infinite-ISP_v1.1-AR1335-1080p.bin) provided in the release on the Kria KV260 AI Starter Kit.
 6. Reset the Kria KV260 board and visualize the Infinite-ISP output on your monitor screen.
 7. Connect the USB cable with the JTAG/USB port on Kria to read the messages over serial interface (baud rate 115200).
-8. RAW-ISPout image pair and Burst Capture frames dump in SD Card status will be displayed over serial interface.
+8. RAW-ISPout image pair and Burst Capture frames dump in SD Card status will be displayed over serial interface:
+
+![status before dumping](https://github.com/10x-Engineers/Infinite-ISP_FPGABinaries/blob/readme_updates_v1.1/doc/v1.1/ar1335_1.png)
+
 9. Once SD Card dumps are complete, you can remove the SD card from the Kria board.
+
+![status after dumping](https://github.com/10x-Engineers/Infinite-ISP_FPGABinaries/blob/readme_updates_v1.1/doc/v1.1/ar1335_2.png)
+
 10. Extract the dumped single RAW-ISPout pair and Burst Capture frames from the SD card and visualize them using provided scripts.
 
 ### For OV5647 image sensor module:
@@ -36,8 +42,14 @@ Infinite-ISP Image Signal Processing Pipeline FPGA binaries for XCK26 Zynq® Ult
 5. Upload the desired binary file (e.g. Infinite-ISP_v1.1-OV5647-1080p.bin) provided in the release on the Kria KV260 AI Starter Kit.
 6. Reset the Kria KV260 board and visualize the Infinite-ISP output on your monitor screen.
 7. Connect the USB cable with the JTAG/USB port on Kria to read the messages over serial interface (baud rate 115200).
-8. RAW-ISPout image pair and Burst Capture frames dump in SD Card status will be displayed over serial interface.
+8. RAW-ISPout image pair and Burst Capture frames dump in SD Card status will be displayed over serial interface:
+
+![status before dumping](https://github.com/10x-Engineers/Infinite-ISP_FPGABinaries/blob/readme_updates_v1.1/doc/v1.1/ov5647_1.png)
+
 9. Once SD Card dumps are complete, you can remove the SD card from the Kria board.
+
+![status before dumping](https://github.com/10x-Engineers/Infinite-ISP_FPGABinaries/blob/readme_updates_v1.1/doc/v1.1/ov5647_2.png)
+
 10. Extract the dumped single RAW-ISPout pair and Burst Capture frames from the SD card and visualize them using provided scripts.
 
 ## v1.0
