@@ -26,13 +26,13 @@ Infinite-ISP Image Signal Processing Pipeline FPGA binaries for XCK26 Zynq® Ult
 7. Connect the USB cable with the JTAG/USB port on Kria to read the messages over serial interface (baud rate 115200).
 8. RAW-ISPout image pair and Burst Capture frames dump in SD Card status will be displayed over serial interface:
 
-![status before dumping](https://github.com/10x-Engineers/Infinite-ISP_FPGABinaries/blob/readme_updates_v1.1/doc/v1.1/ar1335_1.png)
+![status before dumping](/doc/v1.1/ar1335_1.png) 
 
 9. Once SD Card dumps are complete, you can remove the SD card from the Kria board.
 
-![status after dumping](https://github.com/10x-Engineers/Infinite-ISP_FPGABinaries/blob/readme_updates_v1.1/doc/v1.1/ar1335_2.png)
+![status after dumping](/doc/v1.1/ar1335_2.png) 
 
-10. Extract the dumped single RAW-ISPout pair and Burst Capture frames from the SD card and visualize them using provided scripts.
+10. Extract the dumped single RAW-ISPout pair and Burst Capture frames from the SD card and visualize them using provided [scripts](/scripts).
 
 ### For OV5647 image sensor module:
 1. Connect OV5647 image sensor module to the RPi port on Kria KV260 AI Starter Kit.
@@ -44,13 +44,13 @@ Infinite-ISP Image Signal Processing Pipeline FPGA binaries for XCK26 Zynq® Ult
 7. Connect the USB cable with the JTAG/USB port on Kria to read the messages over serial interface (baud rate 115200).
 8. RAW-ISPout image pair and Burst Capture frames dump in SD Card status will be displayed over serial interface:
 
-![status before dumping](https://github.com/10x-Engineers/Infinite-ISP_FPGABinaries/blob/readme_updates_v1.1/doc/v1.1/ov5647_1.png)
+![status before dumping](/doc/v1.1/ov5647_1.png)
 
 9. Once SD Card dumps are complete, you can remove the SD card from the Kria board.
 
-![status before dumping](https://github.com/10x-Engineers/Infinite-ISP_FPGABinaries/blob/readme_updates_v1.1/doc/v1.1/ov5647_2.png)
+![status before dumping](/doc/v1.1/ov5647_2.png)
 
-10. Extract the dumped single RAW-ISPout pair and Burst Capture frames from the SD card and visualize them using provided scripts.
+10. Extract the dumped single RAW-ISPout pair and Burst Capture frames from the SD card and visualize them using provided [scripts](/scripts).
 
 ## v1.0
 1. Connect the AR1335 IAS image sensor module (included in Xilinx Kria KV260 Accessory Pack) to the IAS1 port on the Kria KV260 AI Starter Kit.
