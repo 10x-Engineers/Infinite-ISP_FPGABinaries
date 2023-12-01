@@ -23,8 +23,8 @@ Infinite-ISP Image Signal Processing Pipeline FPGA binaries for XCK26 Zynq® Ult
 4. Power up the Kria KV260 board and follow the [steps](https://docs.xilinx.com/r/en-US/ug1089-kv260-starter-kit/Ethernet-Recovery-Tool) for loading the on-board Xilinx Image Recovery Tool.
 5. Upload the desired binary file (e.g. Infinite-ISP_v1.1-AR1335-1080p.bin) provided in the release on the Kria KV260 AI Starter Kit.
 6. Reset the Kria KV260 board and visualize the Infinite-ISP output on your monitor screen.
-7. Connect the USB cable with the JTAG/USB port on Kria to read the messages over UART.
-8. RAW-ISPout image pair and Burst Capture frames dump in SD Card status will be displayed over UART.
+7. Connect the USB cable with the JTAG/USB port on Kria to read the messages over serial interface (baud rate 115200).
+8. RAW-ISPout image pair and Burst Capture frames dump in SD Card status will be displayed over serial interface.
 9. Once SD Card dumps are complete, you can remove the SD card from the Kria board.
 10. Extract the dumped single RAW-ISPout pair and Burst Capture frames from the SD card and visualize them using provided scripts.
 
@@ -35,8 +35,8 @@ Infinite-ISP Image Signal Processing Pipeline FPGA binaries for XCK26 Zynq® Ult
 4. Power up the Kria KV260 board and follow the [steps](https://docs.xilinx.com/r/en-US/ug1089-kv260-starter-kit/Ethernet-Recovery-Tool) for loading the on-board Xilinx Image Recovery Tool.
 5. Upload the desired binary file (e.g. Infinite-ISP_v1.1-OV5647-1080p.bin) provided in the release on the Kria KV260 AI Starter Kit.
 6. Reset the Kria KV260 board and visualize the Infinite-ISP output on your monitor screen.
-7. Connect the USB cable with the JTAG/USB port on Kria to read the messages over UART.
-8. RAW-ISPout image pair and Burst Capture frames dump in SD Card status will be displayed over UART.
+7. Connect the USB cable with the JTAG/USB port on Kria to read the messages over serial interface (baud rate 115200).
+8. RAW-ISPout image pair and Burst Capture frames dump in SD Card status will be displayed over serial interface.
 9. Once SD Card dumps are complete, you can remove the SD card from the Kria board.
 10. Extract the dumped single RAW-ISPout pair and Burst Capture frames from the SD card and visualize them using provided scripts.
 
@@ -47,8 +47,16 @@ Infinite-ISP Image Signal Processing Pipeline FPGA binaries for XCK26 Zynq® Ult
 4. Power up the Kria KV260 board and follow the [steps](https://docs.xilinx.com/r/en-US/ug1089-kv260-starter-kit/Ethernet-Recovery-Tool) for loading the on-board Xilinx Image Recovery Tool.
 5. Upload the desired binary file (e.g. 'Infinite-ISP_v1.0-1080p.bin') on the Kria KV260 AI Starter Kit.
 6. Reset the Kria KV260 board and visualize the Infinite-ISP output on your monitor screen.
-7. Connect the USB cable with the JTAG/USB port on Kria to read the messages over UART.
+7. Connect the USB cable with the JTAG/USB port on Kria to read the messages over serial interface (baud rate 115200).
 8. You can remove the SD card from the Kria board, extract the dumped single RGB-RAW pair and 300 RGB frames (if applicable), and visualize them using the provided scripts.
+
+## Scripts for visualization of FPGA outputs in SD Card
+| Name | Description |
+| -----| ----- |
+| sensor_bin_to_sensor_raw.py | converts the image sensor memory dump (.bin) data from the FPGA Platform to Bayer RAW frame (.raw) containing valid pixel data. |
+| isp_output_bin_to_isp_output_png.py | converts the ISP output memory dump (.bin) data from the FPGA Platform to output image frame (.png) as well as output pixel data frame (.bin) for verification. |
+| sensor_bin_to_sensor_raw_burst_capture.py | converts the image sensor memory dumps (.bin) of RAW Burst Capture from the FPGA Platform to Bayer RAW frames (.raw) containing valid pixel data. It also converts the Bayer RAW frames to equivalent grayscale .png for visualization. |
+| video_creation.py | converts multiple ISP output memory dumps (.bin) from the FPGA Platform to corresponding output image frames (.png) and stitches them together into a .mp4 video. |
 
 ## Contact
 For any inquiries or feedback, feel free to reach out.
