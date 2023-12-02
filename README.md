@@ -26,11 +26,11 @@ Infinite-ISP Image Signal Processing Pipeline FPGA binaries for XCK26 Zynq® Ult
 7. Connect the USB cable with the JTAG/USB port on Kria to read the messages over serial interface (baud rate 115200).
 8. RAW-ISPout image pair and Burst Capture frames dump in SD Card status will be displayed over serial interface:
 
-![status before dumping](/doc/v1.1/ar1335_1.png) 
+<kbd>![status before dumping](/doc/v1.1/ar1335_1.png)</kbd> 
 
 9. Once SD Card dumps are complete, you can remove the SD card from the Kria board.
 
-![status after dumping](/doc/v1.1/ar1335_2.png) 
+<kbd>![status after dumping](/doc/v1.1/ar1335_2.png)</kbd> 
 
 10. Extract the dumped single RAW-ISPout pair and Burst Capture frames from the SD card and visualize them using provided [scripts](/scripts).
 
@@ -44,11 +44,11 @@ Infinite-ISP Image Signal Processing Pipeline FPGA binaries for XCK26 Zynq® Ult
 7. Connect the USB cable with the JTAG/USB port on Kria to read the messages over serial interface (baud rate 115200).
 8. RAW-ISPout image pair and Burst Capture frames dump in SD Card status will be displayed over serial interface:
 
-![status before dumping](/doc/v1.1/ov5647_1.png)
+<kbd>![status before dumping](/doc/v1.1/ov5647_1.png)</kbd>
 
 9. Once SD Card dumps are complete, you can remove the SD card from the Kria board.
 
-![status before dumping](/doc/v1.1/ov5647_2.png)
+<kbd>![status before dumping](/doc/v1.1/ov5647_2.png)</kbd>
 
 10. Extract the dumped single RAW-ISPout pair and Burst Capture frames from the SD card and visualize them using provided [scripts](/scripts).
 
