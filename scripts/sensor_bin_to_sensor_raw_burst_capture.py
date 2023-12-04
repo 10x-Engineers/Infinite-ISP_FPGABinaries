@@ -75,7 +75,7 @@ for index in range (start, end+1):
     for inner_array in flipped_array:
         # Convert each element to binary and concatenate
         binary_concatenated = ''.join([format(x, '08b') for x in inner_array])
-        result_list.append((int(binary_concatenated[2:12],2),int(binary_concatenated[12:22],2),int(binary_concatenated[22:32],2)))
+        result_list.append((int(binary_concatenated[22:32],2),int(binary_concatenated[12:22],2),int(binary_concatenated[2:12],2)))
     img = np.array(result_list).reshape((h, pixelsInStride))[:, 0:w].astype(np.uint16)
 
     # dumping a .raw file for inf_isp
