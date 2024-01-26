@@ -15,6 +15,39 @@ Infinite-ISP Image Signal Processing Pipeline FPGA binaries for XCK26 Zynq® Ult
 
 # How to use the FPGA Binary Files
 
+## v1.2
+### For AR1335 IAS module:
+1. Connect AR1335 IAS image sensor module to the IAS1 port on Kria KV260 AI Starter Kit.
+2. Insert SD Card (2GB or above) into the Kria KV260 board.
+3. Connect the Kria KV260 board with a monitor screen using an HDMI cable.
+4. Power up the Kria KV260 board and follow the [steps](https://docs.xilinx.com/r/en-US/ug1089-kv260-starter-kit/Ethernet-Recovery-Tool) for loading the on-board Xilinx Image Recovery Tool.
+5. Upload the desired binary file (e.g. Infinite-ISP_v1.2-AR1335.bin) provided in the release on the Kria KV260 AI Starter Kit.
+6. Reset the Kria KV260 board and visualize the Infinite-ISP output on your monitor screen.
+7. Connect the USB cable with the JTAG/USB port on Kria to read the messages over the serial interface (baud rate 115200).
+8. A configuration menu as shown below will appear. Details of the user menu are provided in the [user guide](https://github.com/10x-Engineers/Infinite-ISP_FPGABinaries/blob/release_v1.2/doc/Infinite-ISP%20Configuration%20Menu.md):
+
+<kbd>![status before dumping](/doc/v1.2/user_menu.png)</kbd> 
+
+9. If you want to dump frame(s), do so by going to option 2, and then you can remove the SD card from the Kria board.
+
+10. Extract the dumped frame(s) from the SD card and visualize them using the provided [scripts](/scripts).
+
+### For OV5647 image sensor module:
+1. Connect the OV5647 image sensor module to the RPi port on the Kria KV260 AI Starter Kit.
+2. Insert an SD Card (2GB or above) into the Kria KV260 board.
+3. Connect the Kria KV260 board with a monitor screen using an HDMI cable.
+4. Power up the Kria KV260 board and follow the [steps](https://docs.xilinx.com/r/en-US/ug1089-kv260-starter-kit/Ethernet-Recovery-Tool) for loading the on-board Xilinx Image Recovery Tool.
+5. Upload the desired binary file (e.g. Infinite-ISP_v1.2-OV5647.bin) provided in the release on the Kria KV260 AI Starter Kit.
+6. Reset the Kria KV260 board and visualize the Infinite-ISP output on your monitor screen.
+7. Connect the USB cable with the JTAG/USB port on Kria to read the messages over the serial interface (baud rate 115200).
+8. RAW-ISPout image pair and Burst Capture frames dump in SD Card status will be displayed over serial interface:
+
+<kbd>![status before dumping](/doc/v1.2/user_menu_1.png)</kbd>
+
+9. If you want to dump frame(s), do so by going to option 2, and then you can remove the SD card from the Kria board.
+
+10. Extract the dumped frame(s) from the SD card and visualize them using the provided [scripts](/scripts).
+
 ## v1.1
 ### For AR1335 IAS module:
 1. Connect AR1335 IAS image sensor module to the IAS1 port on Kria KV260 AI Starter Kit.
