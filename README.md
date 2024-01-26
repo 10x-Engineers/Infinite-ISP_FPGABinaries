@@ -28,11 +28,29 @@ Infinite-ISP Image Signal Processing Pipeline FPGA binaries for XCK26 Zynq® Ult
 
 <kbd>![status before dumping](/doc/v1.1/ar1335_1.png)</kbd> 
 
-9. Once SD Card dumps are complete, you can remove the SD card from the Kria board.
+9. If you want to dump frame(s), do so by going to option 2, and then you can remove the SD card from the Kria board.
 
 <kbd>![status after dumping](/doc/v1.1/ar1335_2.png)</kbd> 
 
-10. Extract the dumped single RAW-ISPout pair and Burst Capture frames from the SD card and visualize them using provided [scripts](/scripts).
+10. Extract the dumped frame(s) from the SD card and visualize them using the provided [scripts](/scripts).
+
+### For OV5647 image sensor module:
+1. Connect the OV5647 image sensor module to the RPi port on the Kria KV260 AI Starter Kit.
+2. Insert an SD Card (2GB or above) into the Kria KV260 board.
+3. Connect the Kria KV260 board with a monitor screen using an HDMI cable.
+4. Power up the Kria KV260 board and follow the [steps](https://docs.xilinx.com/r/en-US/ug1089-kv260-starter-kit/Ethernet-Recovery-Tool) for loading the on-board Xilinx Image Recovery Tool.
+5. Upload the desired binary file (e.g. Infinite-ISP_v1.2-OV5647.bin) provided in the release on the Kria KV260 AI Starter Kit.
+6. Reset the Kria KV260 board and visualize the Infinite-ISP output on your monitor screen.
+7. Connect the USB cable with the JTAG/USB port on Kria to read the messages over the serial interface (baud rate 115200).
+8. RAW-ISPout image pair and Burst Capture frames dump in SD Card status will be displayed over serial interface:
+
+<kbd>![status before dumping](/doc/v1.1/ov5647_1.png)</kbd>
+
+9. If you want to dump frame(s), do so by going to option 2, and then you can remove the SD card from the Kria board.
+
+<kbd>![status before dumping](/doc/v1.1/ov5647_2.png)</kbd>
+
+10. Extract the dumped frame(s) from the SD card and visualize them using the provided [scripts](/scripts).
 
 ## v1.1
 ### For AR1335 IAS module:
