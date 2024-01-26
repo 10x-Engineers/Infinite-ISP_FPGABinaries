@@ -42,11 +42,9 @@ Infinite-ISP Image Signal Processing Pipeline FPGA binaries for XCK26 Zynq® Ult
 7. Connect the USB cable with the JTAG/USB port on Kria to read the messages over the serial interface (baud rate 115200).
 8. RAW-ISPout image pair and Burst Capture frames dump in SD Card status will be displayed over serial interface:
 
-<kbd>![status before dumping](/doc/v1.1/ov5647_1.png)</kbd>
+<kbd>![status before dumping](/doc/v1.2/user_menu.png)</kbd>
 
 9. If you want to dump frame(s), do so by going to option 2, and then you can remove the SD card from the Kria board.
-
-<kbd>![status before dumping](/doc/v1.1/ov5647_2.png)</kbd>
 
 10. Extract the dumped frame(s) from the SD card and visualize them using the provided [scripts](/scripts).
 
