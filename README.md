@@ -24,7 +24,7 @@ Infinite-ISP Image Signal Processing Pipeline FPGA binaries for XCK26 Zynq® Ult
 5. Upload the desired binary file (e.g. Infinite-ISP_v1.2-AR1335.bin) provided in the release on the Kria KV260 AI Starter Kit.
 6. Reset the Kria KV260 board and visualize the Infinite-ISP output on your monitor screen.
 7. Connect the USB cable with the JTAG/USB port on Kria to read the messages over the serial interface (baud rate 115200).
-8. A configuration menu as shown below will appear. Details of the user menu are provided in the release notes:
+8. A configuration menu as shown below will appear. Details of the user menu are provided in the [user guide](https://github.com/10x-Engineers/Infinite-ISP_FPGABinaries/blob/release_v1.2/doc/Infinite-ISP%20Configuration%20Menu.md):
 
 <kbd>![status before dumping](/doc/v1.2/user_menu.png)</kbd> 
 
@@ -42,7 +42,7 @@ Infinite-ISP Image Signal Processing Pipeline FPGA binaries for XCK26 Zynq® Ult
 7. Connect the USB cable with the JTAG/USB port on Kria to read the messages over the serial interface (baud rate 115200).
 8. RAW-ISPout image pair and Burst Capture frames dump in SD Card status will be displayed over serial interface:
 
-<kbd>![status before dumping](/doc/v1.2/user_menu.png)</kbd>
+<kbd>![status before dumping](/doc/v1.2/user_menu_1.png)</kbd>
 
 9. If you want to dump frame(s), do so by going to option 2, and then you can remove the SD card from the Kria board.
 
