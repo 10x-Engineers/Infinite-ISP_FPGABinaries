@@ -1,0 +1,1 @@
+The Infinite-ISP Configuration Menu contains three options. You can change sensor configurations such as exposure duration and analog/digital gain settings, start burst capture of up to 193 consecutive frames, change ISP parameters and even adjust the focus of the sensor module. The hierarchy of the Infinite-ISP Configuration Menu is as follows:
