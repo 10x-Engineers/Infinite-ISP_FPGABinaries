@@ -19,13 +19,14 @@ import shutil
 
 # Path of the directory containing "OV5467" and "AR1335" directories
 path =  "./"
+scene_name = "TestImage"
 
 # Supported Sensors and selected sensor (SENSOR)
 SupportedSensors = {
     "AR1335": 1,
     "OV5647": 2 
 }
-SENSOR = "OV5647"
+SENSOR = "AR1335"
 
 # Supported ISP output formats
 Supported_Formats = {
@@ -34,27 +35,39 @@ Supported_Formats = {
 }
 
 # Select the format by copying supported format string from above
-Selected_Format = "YUV"
+Selected_Format = "RGB"
 
 # Starting and ending frames of the video sequence
-start_index, end_index = 1, 250
+start_index, end_index = 1, 20
 
 # Size of the output image
 h, w =  1080, 1920
+
+# Selecting bits and bayer based on selected sensor
+if(SupportedSensors[SENSOR] == SupportedSensors["AR1335"]):
+    sns_width, sns_height = 2048, 1536
+    bits, bayer = 10, "GRBG"
+    
+if(SupportedSensors[SENSOR] == SupportedSensors["OV5647"]):
+    sns_width, sns_height = 2592, 1944
+    bits, bayer = 10, "BGGR"
 
 # parent directory
 p = Path(path)
 parent_dir = p.resolve().joinpath(SENSOR)
 
 # Making directory for saving .png files
-bin_dir = "Burst_Capture"       # Created by firmware, DO NOT MODIFY
+bin_dir = "BurstCapture_Pairs/ISPout"       # Created by firmware, DO NOT MODIFY
 bin_path = parent_dir / bin_dir
 frame_dir = Selected_Format + '_Frames'
 frame_path = parent_dir / frame_dir
+fpga_dir = "FPGA_Bins"
+fpga_path = parent_dir / fpga_dir
 video_dir = "Video_Frames"
 video_path = parent_dir / video_dir
 Path.mkdir(frame_path,exist_ok=True)
-Path.mkdir(video_path,exist_ok=True) 
+Path.mkdir(video_path,exist_ok=True)
+Path.mkdir(fpga_path,exist_ok=True)  
 
 # Images are stored in the form of rows where the size of each row in bytes
 # should be a multiple of 256, each such row size is called 'stride'
@@ -63,9 +76,10 @@ stride = stride.astype(np.uint16)
 img = np.zeros((h,w,3), dtype=np.uint8)
 
 for m in range(start_index,end_index+1):
-    # repalce the first number in the filename as per the iteration number 
-    filename =str(bin_path) + '/' + Selected_Format + str(m) + '.bin'
-    with open(filename, 'rb') as f:
+    # repalce the first number in the filename as per the iteration number
+    filepath = str(bin_path) + '/' 
+    filename = Selected_Format + '_' + scene_name + '_' + str(sns_width) + 'x' + str(sns_height) + '_' + str(bits) + 'bits_' + bayer + '_' + str(m) + '.bin'
+    with open(filepath + filename, 'rb') as f:
         arr = np.fromfile(f, dtype=np.uint8)
     f.close()
 
@@ -75,7 +89,18 @@ for m in range(start_index,end_index+1):
     arr_trun = arr[:,0:w*3]
     # print(arr_trun.shape)
 
+    # flatten the shape
     arr_flat = arr_trun.flatten()
+    arr_flat_u16 = arr_flat.astype(np.uint16)
+    arr_corrected = np.zeros(arr_flat_u16.shape, dtype=np.uint16)
+
+    # reversing the order since the file that came from FPGA is BGR/YUV BGR/YUV BGR/YUV ...
+    arr_corrected[0::3] = arr_flat[2::3]
+    arr_corrected[1::3] = arr_flat[1::3]
+    arr_corrected[2::3] = arr_flat[0::3]
+    
+    # dumping the strides removed binary file in the FPGA_Bin directory
+    arr_corrected.tofile(str(fpga_path) + '/' + "FPGA" + filename)
 
     R_flat = arr_flat[0::3]
     G_flat = arr_flat[1::3]
@@ -149,5 +174,4 @@ video.release()
 cv2.destroyAllWindows()
 
 # Remove directory after creating RGB video for YUV
-if(Supported_Formats[Selected_Format] == Supported_Formats['YUV']):
-    shutil.rmtree(image_folder)
+shutil.rmtree(str(video_path))

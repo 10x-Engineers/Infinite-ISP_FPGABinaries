@@ -16,6 +16,7 @@ from pathlib import Path
 
 # Path of the directory containing "OV5467" and "AR1335" directories
 path =  "./"
+scene_name = "TestImage"
 
 # Supported Sensors and selected sensor (SENSOR)
 SupportedSensors = {
@@ -25,16 +26,16 @@ SupportedSensors = {
 SENSOR = "AR1335"
 
 # start and end index of burst capture frames for converting .bin to .raw
-start, end = 1, 250
+start, end = 1, 20
 
 # parent directory
 p = Path(path)
 parent_dir = p.resolve().joinpath(SENSOR)   
 
 # Making directories for saving .raw and .png files
-raw_dir = "Burst_Capture_RAW"
-png_dir = "Burst_Capture_PNG"
-bin_dir = "Burst_Capture"       # Created by firmware, DO NOT MODIFY
+raw_dir = "BurstCapture_RAW"
+png_dir = "BurstCapture_PNG"
+bin_dir = "BurstCapture_Pairs/RAW"       # Created by firmware, DO NOT MODIFY
 # joining paths with parent directory
 raw_path = parent_dir/ raw_dir 
 Path.mkdir(raw_path, exist_ok=True)
@@ -45,9 +46,11 @@ bin_path = parent_dir / bin_dir
 # Selecting height and width based on selected sensor
 if(SupportedSensors[SENSOR] == SupportedSensors["AR1335"]):
     h, w = 1536, 2048
+    bits, bayer = 10, "GRBG"
     
 if(SupportedSensors[SENSOR] == SupportedSensors["OV5647"]):
     h, w = 1944, 2592
+    bits, bayer = 10, "BGGR"
 
 h =  int(h)
 w =  int(w)
@@ -61,7 +64,7 @@ pixelsInStride= int((stride/4)*3)
 
 for index in range (start, end+1):
 # reading the dumped binary file
-    filename = 'RAW' + str(index) + '.bin'
+    filename = 'RAW_' + scene_name + '_' + str(w) + 'x' + str(h) + '_' + str(bits) + 'bits_' + bayer + '_' + str(index) + '.bin'
     filepath = bin_path / filename
     print('Processing ' + 'RAW'+ str(index) + ' ...')
     with open(filepath, 'rb') as f:
