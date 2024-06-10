@@ -20,7 +20,7 @@ Infinite-ISP Image Signal Processing Pipeline FPGA binaries for XCK26 Zynq® Ult
 1. Connect AR1335 IAS image sensor module to the IAS1 port on Kria KV260 AI Starter Kit.
 2. Insert SD Card (2GB or above) into the Kria KV260 board.
 3. Connect the Kria KV260 board with a monitor screen using an HDMI cable.
-4. Power up the Kria KV260 board and follow the [steps](https://docs.xilinx.com/r/en-US/ug1089-kv260-starter-kit/Ethernet-Recovery-Tool) for loading the on-board Xilinx Image Recovery Tool.
+4. Power up the Kria KV260 board and follow the [steps](https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/1641152513/Kria+SOMs+Starter+Kits#Boot-Image-Recovery-Tool) for loading the on-board Xilinx Image Recovery Tool.
 5. Upload the desired binary file (e.g. Infinite-ISP_v1.2-AR1335.bin) provided in the release on the Kria KV260 AI Starter Kit.
 6. Reset the Kria KV260 board and visualize the Infinite-ISP output on your monitor screen.
 7. Connect the USB cable with the JTAG/USB port on Kria to read the messages over the serial interface (baud rate 115200).
@@ -36,7 +36,7 @@ Infinite-ISP Image Signal Processing Pipeline FPGA binaries for XCK26 Zynq® Ult
 1. Connect the OV5647 image sensor module to the RPi port on the Kria KV260 AI Starter Kit.
 2. Insert an SD Card (2GB or above) into the Kria KV260 board.
 3. Connect the Kria KV260 board with a monitor screen using an HDMI cable.
-4. Power up the Kria KV260 board and follow the [steps](https://docs.xilinx.com/r/en-US/ug1089-kv260-starter-kit/Ethernet-Recovery-Tool) for loading the on-board Xilinx Image Recovery Tool.
+4. Power up the Kria KV260 board and follow the [steps](https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/1641152513/Kria+SOMs+Starter+Kits#Boot-Image-Recovery-Tool) for loading the on-board Xilinx Image Recovery Tool.
 5. Upload the desired binary file (e.g. Infinite-ISP_v1.2-OV5647.bin) provided in the release on the Kria KV260 AI Starter Kit.
 6. Reset the Kria KV260 board and visualize the Infinite-ISP output on your monitor screen.
 7. Connect the USB cable with the JTAG/USB port on Kria to read the messages over the serial interface (baud rate 115200).
@@ -53,7 +53,7 @@ Infinite-ISP Image Signal Processing Pipeline FPGA binaries for XCK26 Zynq® Ult
 1. Connect AR1335 IAS image sensor module to the IAS1 port on Kria KV260 AI Starter Kit.
 2. Insert SD Card (2GB or above) into the Kria KV260 board.
 3. Connect the Kria KV260 board with a monitor screen using HDMI cable.
-4. Power up the Kria KV260 board and follow the [steps](https://docs.xilinx.com/r/en-US/ug1089-kv260-starter-kit/Ethernet-Recovery-Tool) for loading the on-board Xilinx Image Recovery Tool.
+4. Power up the Kria KV260 board and follow the [steps](https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/1641152513/Kria+SOMs+Starter+Kits#Boot-Image-Recovery-Tool) for loading the on-board Xilinx Image Recovery Tool.
 5. Upload the desired binary file (e.g. Infinite-ISP_v1.1-AR1335-1080p.bin) provided in the release on the Kria KV260 AI Starter Kit.
 6. Reset the Kria KV260 board and visualize the Infinite-ISP output on your monitor screen.
 7. Connect the USB cable with the JTAG/USB port on Kria to read the messages over serial interface (baud rate 115200).
@@ -71,7 +71,7 @@ Infinite-ISP Image Signal Processing Pipeline FPGA binaries for XCK26 Zynq® Ult
 1. Connect OV5647 image sensor module to the RPi port on Kria KV260 AI Starter Kit.
 2. Insert SD Card (2GB or above) into the Kria KV260 board.
 3. Connect the Kria KV260 board with a monitor screen using HDMI cable.
-4. Power up the Kria KV260 board and follow the [steps](https://docs.xilinx.com/r/en-US/ug1089-kv260-starter-kit/Ethernet-Recovery-Tool) for loading the on-board Xilinx Image Recovery Tool.
+4. Power up the Kria KV260 board and follow the [steps](https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/1641152513/Kria+SOMs+Starter+Kits#Boot-Image-Recovery-Tool) for loading the on-board Xilinx Image Recovery Tool.
 5. Upload the desired binary file (e.g. Infinite-ISP_v1.1-OV5647-1080p.bin) provided in the release on the Kria KV260 AI Starter Kit.
 6. Reset the Kria KV260 board and visualize the Infinite-ISP output on your monitor screen.
 7. Connect the USB cable with the JTAG/USB port on Kria to read the messages over serial interface (baud rate 115200).
@@ -89,7 +89,7 @@ Infinite-ISP Image Signal Processing Pipeline FPGA binaries for XCK26 Zynq® Ult
 1. Connect the AR1335 IAS image sensor module (included in Xilinx Kria KV260 Accessory Pack) to the IAS1 port on the Kria KV260 AI Starter Kit.
 2. Insert an SD Card (2GB or above) into the Kria KV260 board.
 3. Connect the Kria KV260 board with a monitor screen using an HDMI cable.
-4. Power up the Kria KV260 board and follow the [steps](https://docs.xilinx.com/r/en-US/ug1089-kv260-starter-kit/Ethernet-Recovery-Tool) for loading the on-board Xilinx Image Recovery Tool.
+4. Power up the Kria KV260 board and follow the [steps](https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/1641152513/Kria+SOMs+Starter+Kits#Boot-Image-Recovery-Tool) for loading the on-board Xilinx Image Recovery Tool.
 5. Upload the desired binary file (e.g. 'Infinite-ISP_v1.0-1080p.bin') on the Kria KV260 AI Starter Kit.
 6. Reset the Kria KV260 board and visualize the Infinite-ISP output on your monitor screen.
 7. Connect the USB cable with the JTAG/USB port on Kria to read the messages over serial interface (baud rate 115200).
