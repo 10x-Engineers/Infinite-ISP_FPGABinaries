@@ -21,12 +21,13 @@ scene_name = "TestImage"
 # Supported Sensors and selected sensor (SENSOR)
 SupportedSensors = {
     "AR1335": 1,
-    "OV5647": 2 
+    "OV5647": 2,
+    "IMX219": 3 
 }
 SENSOR = "AR1335"
 
 # start and end index of burst capture frames for converting .bin to .raw
-start, end = 1, 20
+start, end = 1, 193
 
 # parent directory
 p = Path(path)
@@ -51,6 +52,10 @@ if(SupportedSensors[SENSOR] == SupportedSensors["AR1335"]):
 if(SupportedSensors[SENSOR] == SupportedSensors["OV5647"]):
     h, w = 1944, 2592
     bits, bayer = 10, "BGGR"
+    
+if(SupportedSensors[SENSOR] == SupportedSensors["IMX219"]):
+    h, w = 1944, 2592
+    bits, bayer = 10, "RGGB"
 
 h =  int(h)
 w =  int(w)

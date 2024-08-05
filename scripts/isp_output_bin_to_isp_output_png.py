@@ -15,12 +15,12 @@ from datetime import datetime
 
 
 filepath = "./"
-filename = 'ISPOut_TestImage_2592x1944_10bits_BGGR.bin'
+filename = 'RGB_TestImage_2592x1944_10bits_RGGB_1.bin'
 with open(filepath + filename, 'rb') as f:
     arr = np.fromfile(f, dtype=np.uint8)
 f.close()
 
-h, w, Format, CONV_STD = 1080, 1920, "YUV444", 2   #copy string from support output formats here
+h, w, Format, CONV_STD = 1080, 1920, "BGR", 2   #copy string from support output formats here
 
 SupportedFormats = {
     "BGR"   : 1,
@@ -115,7 +115,7 @@ def reconstrct_yuv422_for_rtl(arr, height, width):
     rtl_img = np.zeros((height * width * 2,), dtype=np.uint16)
 
     # select y, u and v channels from the binary input array
-    arr_y = arr[2::3]
+    arr_y = arr[0::3]
     arr_c = arr[1::3]
 
     # Rearrange the channels to construct 3D YUV image
@@ -137,14 +137,14 @@ arr_flat_u16 = arr_flat.astype(np.uint16)
 arr_corrected = np.zeros(arr_flat_u16.shape, dtype=np.uint16)
 
 
-# reversing the order since the file that came from FPGA is BGR/YUV BGR/YUV BGR/YUV ...
+# reversing the order since the file that came from FPGA is BGR/VUY BGR/VUY BGR/VUY ...
 arr_corrected[0::3] = arr_flat[2::3]
 arr_corrected[1::3] = arr_flat[1::3]
 arr_corrected[2::3] = arr_flat[0::3]
 print('shape of final saved array ', arr_corrected.shape)
 print(arr_corrected.dtype)
 
-arr_corrected.tofile(filepath + "FPGA" + filename[3:])
+arr_corrected.tofile(filepath + "FPGA" + filename)
 
 #For displaying the saved image
 
@@ -161,7 +161,7 @@ if(SupportedFormats[Format] == SupportedFormats["BGR"]):
     img[:,:,2] = B
 
 if(SupportedFormats[Format] == SupportedFormats["YUV444"]):
-    YUV_img = get_image_from_yuv_format_conversion(arr_flat, h, w, "444")
+    YUV_img = get_image_from_yuv_format_conversion(arr_corrected, h, w, "444")
     img = yuv_to_rgb(YUV_img)
 
 if(SupportedFormats[Format] == SupportedFormats["YUV422"]):
@@ -170,5 +170,5 @@ if(SupportedFormats[Format] == SupportedFormats["YUV422"]):
     img = yuv_to_rgb(YUV_img)
 
 plt.imshow(img)
-plt.imsave(filepath + 'FPGA' + filename[3:-4] + '.png', img.astype(np.uint8))
+plt.imsave(filepath + 'FPGA' + filename[:-4] + '.png', img.astype(np.uint8))
 plt.show()

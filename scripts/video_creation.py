@@ -24,7 +24,8 @@ scene_name = "TestImage"
 # Supported Sensors and selected sensor (SENSOR)
 SupportedSensors = {
     "AR1335": 1,
-    "OV5647": 2 
+    "OV5647": 2,
+    "IMX219": 3 
 }
 SENSOR = "AR1335"
 
@@ -38,7 +39,7 @@ Supported_Formats = {
 Selected_Format = "RGB"
 
 # Starting and ending frames of the video sequence
-start_index, end_index = 1, 20
+start_index, end_index = 1, 193
 
 # Size of the output image
 h, w =  1080, 1920
@@ -51,6 +52,10 @@ if(SupportedSensors[SENSOR] == SupportedSensors["AR1335"]):
 if(SupportedSensors[SENSOR] == SupportedSensors["OV5647"]):
     sns_width, sns_height = 2592, 1944
     bits, bayer = 10, "BGGR"
+    
+if(SupportedSensors[SENSOR] == SupportedSensors["IMX219"]):
+    sns_width, sns_height = 2592, 1944
+    bits, bayer = 10, "RGGB"
 
 # parent directory
 p = Path(path)
@@ -94,10 +99,10 @@ for m in range(start_index,end_index+1):
     arr_flat_u16 = arr_flat.astype(np.uint16)
     arr_corrected = np.zeros(arr_flat_u16.shape, dtype=np.uint16)
 
-    # reversing the order since the file that came from FPGA is BGR/YUV BGR/YUV BGR/YUV ...
-    arr_corrected[0::3] = arr_flat[2::3]
+    # reversing the order since the file that came from FPGA is BGR/VUY BGR/VUY BGR/VUY ...
+    arr_corrected[0::3] = arr_flat[0::3]
     arr_corrected[1::3] = arr_flat[1::3]
-    arr_corrected[2::3] = arr_flat[0::3]
+    arr_corrected[2::3] = arr_flat[2::3]
     
     # dumping the strides removed binary file in the FPGA_Bin directory
     arr_corrected.tofile(str(fpga_path) + '/' + "FPGA" + filename)
@@ -120,9 +125,9 @@ for m in range(start_index,end_index+1):
 
     if(Supported_Formats[Selected_Format] == Supported_Formats["YUV"]):
         # In case of YUV, don't switch the 1st and the 3rd channels
-        img[:,:,0] = R
+        img[:,:,0] = B
         img[:,:,1] = G
-        img[:,:,2] = B
+        img[:,:,2] = R
 
         # Converting YUV frame to RGB frame
         img = cv2.cvtColor(img, cv2.COLOR_YUV2BGR)
@@ -146,6 +151,9 @@ if(SupportedSensors[SENSOR] == SupportedSensors['AR1335']):
 
 if(SupportedSensors[SENSOR] == SupportedSensors['OV5647']):
     fps = 15
+    
+if(SupportedSensors[SENSOR] == SupportedSensors['IMX219']):
+    fps = 20
 
 # Function to sort the images numerically
 def sort_key(s):

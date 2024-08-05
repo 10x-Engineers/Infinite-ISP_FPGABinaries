@@ -12,16 +12,17 @@ import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
 
 # Sensor selection for conversion to .raw
-SENSOR = "OV5647"   #copy string from supported sensor type here
+SENSOR = "AR1335"   #copy string from supported sensor type here
 
 # Supported Sensors
 SupportedSensors = {
     "AR1335": 1,
-    "OV5647": 2 
+    "OV5647": 2,
+    "IMX219": 3 
 }
 
 # reading the dumped binary file
-filename = 'RAW_TestImage_2592x1944_10bits_BGGR.bin'
+filename = 'RAW_TestImage_2048x1536_10bits_GRBG.bin'
 with open(filename, 'rb') as f:
     # read the contents of the file into a new array
     arr = np.fromfile(f, dtype=np.uint8)
@@ -30,6 +31,9 @@ if(SupportedSensors[SENSOR] == SupportedSensors["AR1335"]):
     h, w = 1536, 2048
 
 if(SupportedSensors[SENSOR] == SupportedSensors["OV5647"]):
+    h, w = 1944, 2592
+    
+if(SupportedSensors[SENSOR] == SupportedSensors["IMX219"]):
     h, w = 1944, 2592
 
 h =  np.array (h, dtype = np.uint16)
