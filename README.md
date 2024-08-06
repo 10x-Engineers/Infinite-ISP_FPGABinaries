@@ -58,7 +58,7 @@ Infinite-ISP Image Signal Processing Pipeline FPGA binaries for XCK26 Zynq® Ult
 7. Connect the USB cable with the JTAG/USB port on Kria to read the messages over the serial interface (baud rate 115200).
 8. A configuration menu as shown below will appear. Details of the user menu are provided in the [user guide](https://github.com/10x-Engineers/Infinite-ISP_FPGABinaries/blob/main/doc/Infinite-ISP%20Configuration%20Menu.md): 
 
-<kbd>![status before dumping](/doc/v1.2/imx219_user_menu.png)</kbd>
+<kbd>![status before dumping](/doc/v1.3/imx219_user_menu.png)</kbd>
 
 9. If you want to dump frame(s), do so by going to option 2, and then you can remove the SD card from the Kria board.
 
