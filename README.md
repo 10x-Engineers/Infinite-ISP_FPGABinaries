@@ -162,6 +162,9 @@ Infinite-ISP Image Signal Processing Pipeline FPGA binaries for XCK26 Zynq® Ult
 | sensor_bin_to_sensor_raw_burst_capture.py | converts the image sensor memory dumps (.bin) of RAW Burst Capture from the FPGA Platform to Bayer RAW frames (.raw) containing valid pixel data. It also converts the Bayer RAW frames to equivalent grayscale .png for visualization. |
 | video_creation.py | converts multiple ISP output memory dumps (.bin) from the FPGA Platform to corresponding output image frames (.png) and stitches them together into a .mp4 video. |
 
+## License 
+This project is licensed under Apache 2.0 (see [LICENSE](LICENSE) file).
+
 ## Contact
 For any inquiries or feedback, feel free to reach out.
 
