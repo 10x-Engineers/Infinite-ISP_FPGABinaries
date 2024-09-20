@@ -6,7 +6,7 @@
 1. Connect the IMX219 image sensor module to the P1 connector on the Titanium Ti180 J484 Development Kit.
 2. Insert an SD Card (2GB or above) into the Titanium Ti180 board.
 3. Connect the Titanium Ti180 board with a monitor screen using an HDMI cable.
-4. Power up the Titanium Ti180 board and follow the [steps](https://www.efinixinc.com/docs/efinity-pgm-v3.3.pdf) on page 7.
+4. Power up the Titanium Ti180 board and follow the [steps](https://www.efinixinc.com/docs/efinity-pgm-v3.3.pdf) on page 7 to upload binary.
 5. Upload the desired binary file (e.g. Infinite-ISP_v1.3.1-IMX219.hex) provided in the release on the Titanium Ti180 J484 Development Kit.
 6. Reset the Titanium Ti180 board by turning it OFF and then ON and visualize the Infinite-ISP output on your monitor screen.
 7. Connect the USB cable with the JTAG/USB port on Titanium Ti180 to read the messages over the serial interface (baud rate 115200).
