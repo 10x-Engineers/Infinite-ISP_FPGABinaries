@@ -43,9 +43,9 @@ Main Directory(Infinite-ISP_FPGABinaries)
     ├── xilinx_xck26
     └── efinix_ti180
 ```
-* **binaries** contain the binary files for Xilinx® Kria™ KV260 Vision AI Starter Kit and Efinix® Titanium Ti180 J484 Development Kit.
-* **doc** contain the User Guide and Configuration Menu.
-* **scripts** contain the python scripts for files conversion.
+* **binaries** contains the binary files for Xilinx® Kria™ KV260 Vision AI Starter Kit and Efinix® Titanium Ti180 J484 Development Kit.
+* **doc** contains the User Guide and Configuration Menu.
+* **scripts** contains the python scripts for files conversion.
 
 ## License 
 This project is licensed under Apache 2.0 (see [LICENSE](LICENSE) file).
