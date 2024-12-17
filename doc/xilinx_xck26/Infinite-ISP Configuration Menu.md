@@ -2,7 +2,7 @@
 
 The Infinite-ISP Configuration Menu contains three options. You can change sensor configurations such as exposure duration and analog/digital gain settings, start burst capture of up to 193 consecutive frames, change ISP parameters and even adjust the focus of the sensor module. The hierarchy of the Infinite-ISP Configuration Menu is as follows:
 
-<kbd>![status before dumping](/doc/user_guide/user_menu_top.png)</kbd> 
+<kbd>![status before dumping](/doc/user_guide/Kria_User_Menu_top.png)</kbd> 
 
 
 ## Change Sensor Configuration:
@@ -10,7 +10,7 @@ The Infinite-ISP Configuration Menu contains three options. You can change senso
 
 Upon selecting option 1 of the “Infinite-ISP Configuration Menu”, you will be asked to change either the sensor’s exposure duration or the sensor’s analog/digital gains. The hierarchy of the “Change Sensor Configuration” menu is shown below.
 
-<kbd>![status before dumping](/doc/user_guide/user_menu_sensor.png)</kbd> 
+<kbd>![status before dumping](/doc/user_guide/Kria_User_menu_sensor.png)</kbd> 
 
 
 Upon selecting option 1 (Change Sensor Exposure) of the “Change Sensor Configuration” menu, you will be shown the current “coarse_integration_time” register value and you will be asked to give exposure duration in the units of lines_of_frame (time required by sensor clock to process one line of the frame). Upon entering any value, the exposure duration of the sensor will change. This change can be observed live on the HDMI display attached to the board.
@@ -37,8 +37,6 @@ Once the wait period is over, it will show you the status of the burst capture f
 There are several ISP modules that can be configured through the “Configure ISP Parameters” menu option. Go through them and play with the Infinite-ISP by changing the parameters of different modules. Each sub-module will give you its current parameter values and will prompt you for the new values.
 
 
-## Change VCM Position:
+## Change Auto-Exposure update mode
 
-
-You can change the focus of the AR1335 sensor module by changing the VCM position register value. It will give you the current register value and will ask for the new position register value. This feature requires a board modification to work properly. For further information, contact us at https://10xengineers.ai
-
+Upon selecting option 4 of the “Infinite-ISP Configuration Menu”, you will be asked to change the auto exposure loop. Option 1 for AE firmware loop and option 2 for Hardware AE.
