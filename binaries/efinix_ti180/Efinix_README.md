@@ -29,4 +29,4 @@
 | -----| ----- |
 | sd_reader_raw_ispout_pair.sh | extract the image sensor memory dump data from the SD Card. |
 | efinix_rgb_conversion.py | converts the RGB output memory dump (.bin) data from the FPGA Platform to output image frame (.png) as well as output pixel data frame (.bin) for verification. |
-| efinix_raw_conversion.py | converts the image sensor memory dump (.bin) of RAW Burst Capture from the FPGA Platform to Bayer RAW frames (.raw) containing valid pixel data. |
+| efinix_rgb_conversion.py | converts the image sensor memory dump (.bin) of RAW Burst Capture from the FPGA Platform to Bayer RAW frames (.raw) containing valid pixel data. |
