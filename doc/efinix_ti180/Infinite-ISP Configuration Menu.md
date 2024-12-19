@@ -30,6 +30,6 @@ There are several ISP modules that can be configured through the “Configure IS
 Upon selecting option 3 (Capture RAW10/RGB Pair) of the “Infinite-ISP Configuration Menu”. The RAW10/RGB pair capturing will start. Once the wait period is over, it will show you the status of the capture pair. It first writes the RAW10 frame and then the ISPout frame. Once the frame pair get dumped into the SD card, it will bring you back to the “Infinite-ISP Configuration Menu”.
 
 
-## AE Firmware Loop
+## Change Auto-Exposure update mode
 
 Upon selecting option 4 of the “Infinite-ISP Configuration Menu”, you will be asked to change the auto exposure loop. Option 1 for AE firmware loop and option 2 for Hardware AE.
